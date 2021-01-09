@@ -5,6 +5,8 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class ProjectNotFoundExceptionResponse {
-    private String message;
+public class ProjectBacklogNotFoundExceptionResponse {
+
+    public String message;
+
 }

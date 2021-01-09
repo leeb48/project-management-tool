@@ -26,4 +26,33 @@ public class CustomResponseEntityExceptionHandler extends ResponseEntityExceptio
         return new ResponseEntity<>(exceptionResponse, HttpStatus.NOT_FOUND);
     }
 
+    @ExceptionHandler
+    public final ResponseEntity<Object> handleProjectBacklogNotFoundExecption(ProjectBacklogNotFoundException ex,
+                                                                              WebRequest request) {
+
+        ProjectBacklogNotFoundExceptionResponse exceptionResponse = new ProjectBacklogNotFoundExceptionResponse(
+                ex.getMessage()
+        );
+
+        return new ResponseEntity<>(exceptionResponse, HttpStatus.NOT_FOUND);
+
+    }
+
+    @ExceptionHandler
+    public final ResponseEntity<Object> handleDuplicateUsernameException(DuplicateUsernameException ex,
+                                                                         WebRequest request) {
+
+        DuplicateUsernameResponse response = new DuplicateUsernameResponse(ex.getMessage());
+
+        return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler
+    public final ResponseEntity<Object> handleGeneralException(GeneralException ex,
+                                                               WebRequest request) {
+
+        GeneralExceptionResponse response = new GeneralExceptionResponse(ex.getMessage());
+
+        return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+    }
 }

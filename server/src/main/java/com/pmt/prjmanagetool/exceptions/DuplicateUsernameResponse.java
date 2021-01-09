@@ -5,6 +5,6 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class ProjectNotFoundExceptionResponse {
+public class DuplicateUsernameResponse {
     private String message;
 }
