@@ -5,6 +5,6 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class ProjectNotFoundExceptionResponse {
+public class GeneralExceptionResponse {
     private String message;
 }
